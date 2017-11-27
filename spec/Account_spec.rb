@@ -39,7 +39,7 @@ describe 'Account' do
         account = Account.new
         account.add_funds(100)
         account.save_transaction(100)
-        expect(account.transactions[0]).to eq ({:date => '27/11/2017', :credit => 100})
+        expect(account.transactions[0]).to eq ({:date => '27/11/2017', :credit => 100, :debit => 'N/A', :balance => 100})
   end
 
   it 'has add_funds method call save_transaction' do

@@ -14,16 +14,17 @@ class Account
 
   def add_funds(amount)
     @balance += amount
-    save_transaction(amount)
+    save_transaction({:date => get_date, :credit => amount, :debit => 'N/A',:balance => balance})
   end
 
   def withdraw(amount)
     fail "Insufficient Funds" if amount > balance
     @balance -= amount
+    save_transaction({:date => get_date, :credit => 'N/A', :debit => amount,:balance => balance})
   end
 
-  def save_transaction(amount)
-    @transactions.push({:date => get_date, :credit => amount})
+  def save_transaction(transaction)
+    @transactions.push(transaction)
   end
 
   def get_date
@@ -33,3 +34,4 @@ class Account
 
 
 end
+#{:date => get_date, :credit => amount, :debit => 'N/A' :balance => balance}
