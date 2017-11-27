@@ -8,4 +8,9 @@ DEFAULT_OPENING_BALANCE = 0
     @balance = DEFAULT_OPENING_BALANCE
   end
 
+  def add_funds(amount)
+    @balance += amount
+  end
+
+
 end
