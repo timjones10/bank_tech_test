@@ -13,4 +13,11 @@ require 'Account'
     expect(account.balance).to eq 100
   end
 
+  it 'has a method to withdraw funds to the Account' do
+    account = Account.new
+    account.add_funds(100)
+    account.withdraw(50)
+    expect(account.balance).to eq 50
+  end
+
 end
