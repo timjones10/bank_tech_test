@@ -1,6 +1,6 @@
 class Account
 
-DEFAULT_OPENING_BALANCE = 0
+  DEFAULT_OPENING_BALANCE = 0
 
   attr_reader :balance
 
@@ -13,6 +13,7 @@ DEFAULT_OPENING_BALANCE = 0
   end
 
   def withdraw(amount)
+    fail "Insufficient Funds" if amount > balance
     @balance -= amount
   end
 
