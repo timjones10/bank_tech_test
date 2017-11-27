@@ -1,4 +1,5 @@
-require 'statement'
+require_relative 'statement'
+require 'date'
 
 class Account
 
@@ -24,7 +25,11 @@ class Account
   end
 
   def save_transaction(transaction)
-    @transactions.push(transaction)
+    transactions.push(transaction)
+  end
+
+  def get_statement
+    statement.print_all(@transactions)
   end
 
   def get_date
@@ -32,6 +37,4 @@ class Account
     current_date.strftime "%d/%m/%Y"
   end
 
-
 end
-#{:date => get_date, :credit => amount, :debit => 'N/A' :balance => balance}
