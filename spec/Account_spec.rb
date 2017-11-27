@@ -36,6 +36,14 @@ describe 'Account' do
     expect(account.get_date).to eq '27/11/2017'
   end
 
+  it 'save_transaction method saves the date alongside with the amount' do
+        account = Account.new
+        account.add_funds(100)
+        account.save_transaction(100)
+        expect(account.transactions[0]).to eq ({:date => '27/11/2017', :credit => 100})
+  end
+
+
   it 'has a statement upon initialization' do
     expect(account.statement).to be_an_instance_of(Statement)
   end

@@ -22,7 +22,7 @@ class Account
   end
 
   def save_transaction(amount)
-    @transactions.push(amount)
+    @transactions.push({:date => get_date, :credit => amount})
   end
 
   def get_date
