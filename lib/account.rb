@@ -14,6 +14,7 @@ class Account
 
   def add_funds(amount)
     @balance += amount
+    save_transaction(amount)
   end
 
   def withdraw(amount)

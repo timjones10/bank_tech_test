@@ -28,7 +28,6 @@ describe 'Account' do
   it 'has a save_transaction which saves details of each withdrawal or credit' do
     account = Account.new
     account.add_funds(100)
-    account.save_transaction(100)
     expect(account.transactions.length).to eq 1
   end
 
@@ -43,6 +42,11 @@ describe 'Account' do
         expect(account.transactions[0]).to eq ({:date => '27/11/2017', :credit => 100})
   end
 
+  it 'has add_funds method call save_transaction' do
+    account = Account.new
+    account.add_funds(100)
+    expect(account.transactions.length).to eq 1
+  end
 
   it 'has a statement upon initialization' do
     expect(account.statement).to be_an_instance_of(Statement)
