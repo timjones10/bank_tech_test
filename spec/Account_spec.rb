@@ -32,6 +32,10 @@ describe 'Account' do
     expect(account.transactions.length).to eq 1
   end
 
+  it 'has a get_date method which generates the current date' do
+    expect(account.get_date).to eq '27/11/2017'
+  end
+
   it 'has a statement upon initialization' do
     expect(account.statement).to be_an_instance_of(Statement)
   end

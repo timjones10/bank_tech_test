@@ -25,4 +25,10 @@ class Account
     @transactions.push(amount)
   end
 
+  def get_date
+    current_date = DateTime.now
+    current_date.strftime "%d/%m/%Y"
+  end
+
+
 end
