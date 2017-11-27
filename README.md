@@ -1,5 +1,13 @@
 # Makers Academy Practice Tech Test - Bank
 
+#Tech Test Outline
+
+The following practice tech test was done during Week 10 of Makers Academy.
+
+The 'client requirements' are outlined at the link below'.
+
+https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md
+
 #Approach
 
 Aim was to create the simplest solution to fulfil the requirements - then build on it.
