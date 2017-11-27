@@ -25,4 +25,11 @@ describe 'Account' do
     expect {account.withdraw(50)}.to raise_error "Insufficient Funds"
   end
 
+  it 'has a save_transaction which saves details of each withdrawal or credit' do
+    account = Account.new
+    account.add_funds(100)
+    account.save_transaction(100)
+    expect(account.transactions.length).to eq 1
+  end
+
 end
