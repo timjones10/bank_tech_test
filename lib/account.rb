@@ -1,12 +1,15 @@
+require 'statement'
+
 class Account
 
   DEFAULT_OPENING_BALANCE = 0
 
-  attr_reader :balance, :transactions
+  attr_reader :balance, :transactions, :statement
 
-  def initialize
+  def initialize(statement = Statement.new)
     @balance = DEFAULT_OPENING_BALANCE
     @transactions = []
+    @statement = statement
   end
 
   def add_funds(amount)

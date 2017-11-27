@@ -32,4 +32,8 @@ describe 'Account' do
     expect(account.transactions.length).to eq 1
   end
 
+  it 'has a statement upon initialization' do
+    expect(account.statement).to be_an_instance_of(Statement)
+  end
+
 end
