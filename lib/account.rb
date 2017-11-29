@@ -7,7 +7,7 @@ class Account
 
   attr_reader :balance, :transactions, :statement
 
-  def initialize(statement = Statement.new)
+  def initialize(statement)
     @balance = DEFAULT_OPENING_BALANCE
     @transactions = []
     @statement = statement
@@ -29,7 +29,7 @@ class Account
   end
 
   def get_statement
-    statement.print_all(@transactions)
+    statement.new.print_all(transactions)
   end
 
   def get_date

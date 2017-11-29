@@ -7,8 +7,8 @@ class Statement
   end
 
   def print_all(transactions)
-  puts header
-  transactions[0].values.join(' || ')
+  transactions.each do |transaction|
+    puts transaction.values.join(' || ')
   end
-
+  end
 end
